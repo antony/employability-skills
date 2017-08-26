@@ -1,0 +1,435 @@
+<div class="container">
+  <h2 align="center">{{ quiz.strQuizName }}</h2>
+  <table class="table-hoverable table-striped" align="center" border="1" width="80%">
+    <tbody>
+      <tr>
+        <th scope="col" width="33%">
+          <p>Date/Time</p>
+        </th>
+        <th scope="col" width="34%">
+          <p>Student Name</p>
+        </th>
+        <th scope="col" width="33%">Student Score</th>
+      </tr>
+      <tr>
+        <td align="center" class="bg-light">{{ finishedAt }}</td>
+        <td align="center" class="bg-light">{{ options.candidateName || '-' }}</td>
+        <td align="center" class="bg-light">{{ options.score }} / {{ options.passingScore }} ({{ passPercentage }}%)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table-hoverable table-striped" align="center" border="1" width="80%">
+    <tbody>
+      <tr>
+        <th scope="col" width="20%">Always</th>
+        <th scope="col" width="20%">Frequently</th>
+        <th scope="col" width="20%">Sometimes</th>
+        <th scope="col" width="20%">Occasionally</th>
+        <th scope="col" width="20%">Never</th>
+      </tr>
+      <tr>
+        <td align="center" class="response-Always">Always</td>
+        <td align="center" class="response-Frequently">Frequently</td>
+        <td align="center" class="response-Sometimes">Sometimes</td>
+        <td align="center" class="response-Occasionally">Occasionally</td>
+        <td align="center" class="response-Never">Never</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table-hoverable table-striped" align="center" border="1" width="60%">
+    <tbody>
+      <tr>
+        <th scope="col" width="64%">
+          Section
+        </th>
+        <th scope="col" width="36%">Score</th>
+      </tr>
+      <tr>
+        <td>Positive attitude and behaviours&nbsp;</td>
+        <td align="center" class="bg-primary">{{ results.pab.score }}</td>
+      </tr>
+      <tr>
+        <td>Self-management&nbsp; / Organisational&nbsp;</td>
+        <td align="center" class="bg-primary">{{ results.smo.score }}</td>
+      </tr>
+      <tr>
+        <td>Team working</td>
+        <td align="center" class="bg-primary">{{ results.tw.score }}</td>
+      </tr>
+      <tr>
+        <td>Problem solving and meeting deadlines</td>
+        <td align="center" class="bg-primary">{{ results.psmd.score }}</td>
+      </tr>
+      <tr>
+        <td>Communication</td>
+        <td align="center" class="bg-primary">{{ results.com.score }}</td>
+      </tr>
+      <tr>
+        <td>Application of Industry Skills</td>
+        <td align="center" class="bg-primary">{{ results.ais.score }}</td>
+      </tr>
+      <tr>
+        <td>Ability to learn and adapt</td>
+        <td align="center" class="bg-primary">{{ results.ala.score }}</td>
+      </tr>
+      <tr>
+        <td>Diversity and difference</td>
+        <td align="center" class="bg-primary">{{ results.dad.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p align="center">&nbsp;</p>
+  <table class="table-hoverable table-striped" align="center" border="1" width="80%">
+    <tbody>
+      <tr>
+        <th scope="col" width="10%">&nbsp;</th>
+        <th scope="col" width="60%">Question</th>
+        <th scope="col" width="30%">Response</th>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Positive attitude and behaviours&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td>Am I ready and motivated to take part in work experience?</td>
+        <td align="center" class="response-{{results.pab.answers[0]}}">{{ results.pab.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">2</td>
+        <td>Am I open to new ideas?</td>
+        <td align="center" class="response-{{results.pab.answers[1]}}">{{ results.pab.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">3</td>
+        <td>Am I open to trying new things?</td>
+        <td align="center" class="response-{{results.pab.answers[2]}}">{{ results.pab.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">4</td>
+        <td>Do I want to achieve?</td>
+        <td align="center" class="response-{{results.pab.answers[3]}}">{{ results.pab.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center">5</td>
+        <td>Am I punctual?</td>
+        <td align="center" class="response-{{results.pab.answers[4]}}">{{ results.pab.answers[4] }}</td>
+      </tr>
+      <tr>
+        <td align="center">6</td>
+        <td>My attendance is good.</td>
+        <td align="center" class="response-{{results.pab.answers[5]}}">{{ results.pab.answers[5] }}</td>
+      </tr>
+      <tr>
+        <td align="center">7</td>
+        <td>I have the ability to use my initiative</td>
+        <td align="center" class="response-{{results.pab.answers[0]}}">{{ results.pab.answers[6] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Self-management&nbsp; / Organisational&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">8</td>
+        <td>Am I ready to accept responsibility?</td>
+        <td align="center" class="response-{{results.smo.answers[0]}}">{{ results.smo.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">9</td>
+        <td>Am I flexible about what I do and how I do it ?</td>
+        <td align="center" class="response-{{results.smo.answers[1]}}">{{ results.smo.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">10</td>
+        <td>Can I manage my time effectively?</td>
+        <td align="center" class="response-{{results.smo.answers[2]}}">{{ results.smo.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">11</td>
+        <td>Am I well prepared?</td>
+        <td align="center" class="response-{{results.smo.answers[3]}}">{{ results.smo.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center">12</td>
+        <td>Do I know my own strengths?</td>
+        <td align="center" class="response-{{results.smo.answers[4]}}">{{ results.smo.answers[4] }}</td>
+      </tr>
+      <tr>
+        <td align="center">13</td>
+        <td>Do I know my own weaknesses?</td>
+        <td align="center" class="response-{{results.smo.answers[5]}}">{{ results.smo.answers[5] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Team working&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">14</td>
+        <td>Do I respect other people?</td>
+        <td align="center" class="response-{{results.tw.answers[0]}}">{{ results.tw.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">15</td>
+        <td>Can I work with others?</td>
+        <td align="center" class="response-{{results.tw.answers[1]}}">{{ results.tw.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">16</td>
+        <td>Can I respect the opinion of others?</td>
+        <td align="center" class="response-{{results.tw.answers[2]}}">{{ results.tw.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">17</td>
+        <td>Am I willing to help others?</td>
+        <td align="center" class="response-{{results.tw.answers[3]}}">{{ results.tw.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center">18</td>
+        <td>Am I able to ask for help?</td>
+        <td align="center" class="response-{{results.tw.answers[4]}}">{{ results.tw.answers[4] }}</td>
+      </tr>
+      <tr>
+        <td align="center">19</td>
+        <td>Can I contribute ideas?</td>
+        <td align="center" class="response-{{results.tw.answers[5]}}">{{ results.tw.answers[5] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Problem solving and meeting deadlines</td>
+      </tr>
+      <tr>
+        <td align="center">20</td>
+        <td>I know who to ask is I have a problem</td>
+        <td align="center" class="response-{{results.psmd.answers[0]}}">{{ results.psmd.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">21</td>
+        <td>I feel confident solving problems</td>
+        <td align="center" class="response-{{results.psmd.answers[1]}}">{{ results.psmd.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">22</td>
+        <td>Can I identify a problem/issue when things aren’t working?</td>
+        <td align="center" class="response-{{results.psmd.answers[2]}}">{{ results.psmd.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">23</td>
+        <td>Can I make a plan and stick to it?</td>
+        <td align="center" class="response-{{results.psmd.answers[3]}}">{{ results.psmd.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center">24</td>
+        <td>I can meet set deadlines</td>
+        <td align="center" class="response-{{results.psmd.answers[4]}}">{{ results.psmd.answers[4] }}</td>
+      </tr>
+      <tr>
+        <td align="center">25</td>
+        <td>I can work under pressure</td>
+        <td align="center" class="response-{{results.psmd.answers[5]}}">{{ results.psmd.answers[5] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Communication</td>
+      </tr>
+      <tr>
+        <td align="center">26</td>
+        <td>I am confident in talking to new people</td>
+        <td align="center" class="response-{{results.com.answers[0]}}">{{ results.com.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">27</td>
+        <td>I am aware of my body language</td>
+        <td align="center" class="response-{{results.com.answers[1]}}">{{ results.com.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">28</td>
+        <td>I can listen and respond appropriately</td>
+        <td align="center" class="response-{{results.com.answers[2]}}">{{ results.com.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">29</td>
+        <td>I adapt the way I speak depending on who I am communicating with</td>
+        <td align="center" class="response-{{results.com.answers[3]}}">{{ results.com.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Application of Industry Skills</td>
+      </tr>
+      <tr>
+        <td align="center">30</td>
+        <td>I can use numbers to solve questions and problems</td>
+        <td align="center" class="response-{{results.ais.answers[0]}}">{{ results.ais.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">31</td>
+        <td>I use my maths skills in daily life</td>
+        <td align="center" class="response-{{results.ais.answers[1]}}">{{ results.ais.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">32</td>
+        <td>I use my reading and writing skills in my daily life</td>
+        <td align="center" class="response-{{results.ais.answers[2]}}">{{ results.ais.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">33</td>
+        <td>I can produce clear and structured written work</td>
+        <td align="center" class="response-{{results.ais.answers[3]}}">{{ results.ais.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center">34</td>
+        <td>I have basic IT skills</td>
+        <td align="center" class="response-{{results.ais.answers[4]}}">{{ results.ais.answers[4] }}</td>
+      </tr>
+      <tr>
+        <td align="center">35</td>
+        <td>I can use Microsoft Office Packages</td>
+        <td align="center" class="response-{{results.ais.answers[5]}}">{{ results.ais.answers[5] }}</td>
+      </tr>
+      <tr>
+        <td align="center">36</td>
+        <td>I can send and receive emails.</td>
+        <td align="center" class="response-{{results.ais.answers[6]}}">{{ results.ais.answers[6] }}</td>
+      </tr>
+      <tr>
+        <td align="center">37</td>
+        <td>I can organise electronic documents and files</td>
+        <td align="center" class="response-{{results.ais.answers[7]}}">{{ results.ais.answers[7] }}</td>
+      </tr>
+      <tr>
+        <td align="center">38</td>
+        <td>I can use internet search engines</td>
+        <td align="center" class="response-{{results.ais.answers[8]}}">{{ results.ais.answers[8] }}</td>
+      </tr>
+      <tr>
+        <td align="center">39</td>
+        <td>Industry Skills (Maths, English and IT)</td>
+        <td align="center" class="response-{{results.ais.answers[9]}}">{{ results.ais.answers[9] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Ability to learn and adapt</td>
+      </tr>
+      <tr>
+        <td align="center">40</td>
+        <td>I can learn from my mistakes</td>
+        <td align="center" class="response-{{results.ala.answers[0]}}">{{ results.ala.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">41</td>
+        <td>I use constructive criticism to try and improve</td>
+        <td align="center" class="response-{{results.ala.answers[1]}}">{{ results.ala.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">42</td>
+        <td>I actively ask for feedback</td>
+        <td align="center" class="response-{{results.ala.answers[2]}}">{{ results.ala.answers[2] }}</td>
+      </tr>
+      <tr>
+        <td align="center">43</td>
+        <td>I am able to adapt to new situations and surroundings</td>
+        <td align="center" class="response-{{results.ala.answers[3]}}">{{ results.ala.answers[3] }}</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">Diversity and difference</td>
+      </tr>
+      <tr>
+        <td align="center">44</td>
+        <td>I understand what diversity means</td>
+        <td align="center" class="response-{{results.dad.answers[0]}}">{{ results.dad.answers[0] }}</td>
+      </tr>
+      <tr>
+        <td align="center">45</td>
+        <td>I am considerate of the needs of others</td>
+        <td align="center" class="response-{{results.dad.answers[1]}}">{{ results.dad.answers[1] }}</td>
+      </tr>
+      <tr>
+        <td align="center">46</td>
+        <td>I understand my behaviour can affect others</td>
+        <td align="center" class="response-{{results.dad.answers[2]}}">{{ results.dad.answers[2] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  @import 'https://cdn.shoelace.style/1.0.0-beta18/shoelace.css';
+
+  .container {
+    display: block;
+    margin: 10%;
+    width: 80%;
+  }
+
+  .response-Always {
+    background-color: #2ecc40 !important;
+  }
+
+  .response-Frequently {
+    background-color: #aaa !important;
+  }
+
+  .response-Sometimes {
+    background-color: #39cccc !important;
+  }
+
+  .response-Occasionally {
+    background-color: #ff851b !important;
+  }
+
+  .response-Never {
+    background-color: #ff4136 !important;
+  }
+</style>
+
+<script>
+  export default {
+    data () {
+      return {
+        quiz: {},
+        options: {},
+        answers: [],
+        results: {
+          pab: { last: 7, answers: [], score: 0 },
+          smo: { last: 13, answers: [], score: 0 },
+          tw: { last: 19, answers: [], score: 0 },
+          psmd: { last: 25, answers: [], score: 0 },
+          com: { last: 29, answers: [], score: 0 },
+          ais: { last: 39, answers: [], score: 0 },
+          ala: { last: 43, answers: [], score: 0 },
+          dad: { last: 46, answers: [], score: 0 }
+        }
+      }
+    },
+    computed: {
+      passPercentage: options => {
+        const actualPercentage = (options.score / options.passingScore) * 100
+        return Math.round(actualPercentage * 100) / 100
+      },
+      finishedAt: options => {
+        return new Date(options.finishedAt).toLocaleString()
+      }
+    },
+    oncreate () {
+      const parentWnd = this.get('input')
+      const { nPassingScore: passingScore, dtmFinished: finishedAt } = parentWnd.g_oContentResults
+      const { strMainQuizId: mainQuizId, strName: candidateName } = parentWnd.g_oPrintOptions
+      const quizzes = parentWnd.g_listQuizzes
+      const quiz = quizzes[mainQuizId]
+      const { nPtScore: score } = quiz
+      const options = { passingScore, finishedAt, mainQuizId, candidateName, score }
+
+      const results = quiz.arrQuestions.reduce((curr, { strUserResponse, nPoints }, i) => {
+        const sectionName = Object.keys(curr).find(s => {
+          return i < curr[s].last
+        })
+
+        const section = curr[sectionName]
+        section.answers.push(strUserResponse)
+        section.score += parseInt(nPoints)
+        return curr
+      }, this.get('results'))
+
+      this.set({
+        options,
+        quiz,
+        results,
+        input: undefined
+      })
+    }
+  }
+</script>
