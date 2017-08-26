@@ -4,4 +4,4 @@
 npm run deploy
 ```
 
-Your report is stored at `dist/report.html`
+Your report template is stored [on github](https://raw.githubusercontent.com/antony/employability-skills/master/dist/report.html)
